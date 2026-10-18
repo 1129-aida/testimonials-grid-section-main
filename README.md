@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution URL ](https://github.com/1129-aida/testimonials-grid-section-main)
-- Live Site URL: [live site URL](https://your-live-site-url.com)
+- Live Site URL: [live site URL](https://1129-aida.github.io/testimonials-grid-section-main/)
 
 ## My process
 
