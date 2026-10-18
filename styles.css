@@ -12,13 +12,13 @@
 :root {
     --Purple-50: hsl(260, 100%, 95%);
     --Purple-300: hsl(264, 82%, 80%);
-    --Purple-500: hsl(263, 55%, 52%);
+    --Daniel-background-color: hsl(263, 55%, 52%);
     --White: hsl(0, 0%, 100%);
     --Grey-100: hsl(214, 17%, 92%);
     --Grey-200: hsl(0, 0%, 81%);
     --Grey-400: hsl(224, 10%, 45%);
-    --Grey-500: hsl(217, 19%, 35%);
-    --Dark-blue: hsl(219, 29%, 14%);
+    --Jonathan-background-color: hsl(217, 19%, 35%);
+    --Patrick-background-color: hsl(219, 29%, 14%);
     --Black: hsl(0, 0%, 7%);
 }
 
@@ -27,4 +27,169 @@ body {
     font-size: 13px;
     font-weight: 500;
     line-height: 1.5;
+    padding: 80px 30px;
+    margin: 0;
+    background-color: var(--Grey-100);
+    min-height: 100vh;
+    box-sizing: border-box
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0, 1fr));
+    grid-template-areas:
+    "Daniel Daniel Jonathan Kira"
+    "Jeanette Patrick Patrick Kira" 
+    ;
+    gap: 2em;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1110px;
+}
+
+article {
+    box-shadow: 26px 50px 35px var(--Grey-200);
+    border-radius: 10px;
+    padding: 1.7em 2.5em;
+}
+
+img {
+    border-radius: 50%;
+    width: 2.5em;
+    align-self: center;
+}
+
+.Daniel {
+    grid-area: Daniel;
+    background-color: var(--Daniel-background-color);
+    color: var(--Purple-300);
+}
+
+.Daniel .few {
+    color: var(--Purple-50);
+    position: relative;
+}
+
+.ds { 
+    position: relative;
+    z-index: 2;
+}
+
+svg {
+    position: absolute;
+    z-index: 1;
+    top: -105%;
+    left: 72.4%;
+}
+
+.Daniel img {
+    border: 3px solid var(--Purple-300);
+}
+
+.Jonathan {
+    grid-area: Jonathan;
+    background-color: var(--Jonathan-background-color);
+    color: var(--Grey-200);
+}
+
+.Jonathan .few {
+    color: var(--Grey-100);
+}
+
+.Jonathan img {
+    border: 3px solid var(--Grey-200)
+}
+
+.Kira {
+    grid-area: Kira;
+    background-color: var(--White);
+    color: var(--Grey-400);
+}
+
+.Kira .few {
+    color: var(--Jonathan-background-color);
+}
+
+.Jeanette {
+    grid-area: Jeanette;
+    background-color: var(--White);
+    color: var(--Grey-400);
+}
+
+.Jeanette .few {
+    color: var(--Jonathan-background-color);
+}
+
+.Patrick {
+    grid-area: Patrick;
+    background-color: var(--Patrick-background-color);
+    color: var(--Grey-200);
+}
+
+.Patrick .few {
+    color: var(--Grey-100);
+}
+
+.Patrick img {
+    border: 3px solid var(--Daniel-background-color);
+}
+
+cite {
+    font-size: 16px;
+    font-style: normal;
+}
+
+.few {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0.5em 0;
+}
+
+blockquote {
+    margin: 0;
+}
+
+p {
+    font-style: normal;
+    margin: 0;
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5em;
+}
+
+@media(max-width: 1200px) {
+    main{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+     "Daniel Jonathan" 
+     "Jeanette Patrick" 
+     "Kira Kira"
+     ;
+    }
+}
+
+@media(max-width: 1042px) {
+    svg {
+        display: none;
+    }
+}
+
+@media(max-width: 600px) {
+    main{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+     "Daniel" 
+     "Jonathan" 
+     "Jeanette"
+     "Patrick" 
+     "Kira"
+     ;
+    }
 }
